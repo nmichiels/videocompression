@@ -1,0 +1,38 @@
+Filmpjes die we zelf compressen
+
+1) Standaardparameters (grijs, GOP=1, maxMad=7, maxP=6, macro=16, block=8, qstart=2, qraise=2) (223k)
+VideoCompress small(352-288).yuv people.y 0 288 352 3
+VideoDecompress people.y people(352-288)(decompressed).yuv 0
+VideoDecompress people.y people(352-288)(decompressed).yuv 0 1
+Nogmaals decompresse met avaraging
+
+2) Kleur
+VideoCompress small(352-288).yuv people2.y 1 288 352 3 7 6 16 0 16 0 6
+VideoDecompress people2.y people2(352-288)(decompressed).yuv 1 1
+
+3) beste parameters
+VideoCompress small(352-288).yuv people3.y 1 288 352 3 5 6 16 0 16 1 2
+VideoDecompress people3.y people3(352-288)(decompressed).yuv 1 1
+
+4) vergelijking MAD
+VideoCompress small(352-288).yuv people4.y 1 288 352 3 7 6 16 0 8 2 2
+VideoDecompress people4.y people4(352-288)(decompressed).yuv 1 1
+
+VideoCompress small(352-288).yuv people4.y 1 288 352 3 0 1 16 0 8 2 2
+
+
+
+
+Andere:
+zware compressie
+VideoCompress ICE_352x288_30_orig_02.yuv schaatsen.y 1 288 352 3
+VideoDecompress schaatsen.y ICE_352x288(352-288)(decompressed).yuv 1 1
+
+goede compressie met vrij degelijk resultaat
+VideoCompress ICE_352x288_30_orig_02.yuv schaatsen.y 1 288 352 3 5 5 16 0 2 2 3
+
+
+
+
+
+
